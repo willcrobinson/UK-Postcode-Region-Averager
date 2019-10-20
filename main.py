@@ -18,9 +18,9 @@ with open('ukpostcodes.csv', 'r')  as ifp:
 		if postcode_area not in postcode_areas:
 			postcode_areas[postcode_area] = {'lats': [], 'lngs': []}
 		
-		# If either the lat on lng is empty, ignore the row
+		# If either the lat or lng is empty or default, ignore the row
 		# Otherwise, add to the dict
-		if (row['latitude'] != '' and row['longitude'] != ''):
+		if 	row['latitude'] != '' and row['longitude'] != '' and row['latitude'][:6] != '99.999' and row['longitude'][:6] != '0.00000':
 			postcode_areas[postcode_area]['lats'].append(float(row['latitude']))
 			postcode_areas[postcode_area]['lngs'].append(float(row['longitude']))
 
