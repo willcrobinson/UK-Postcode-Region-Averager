@@ -1,6 +1,4 @@
 import csv
-import sys
-from pprint import pprint
 from functools import reduce
 
 def Average(lst): 
